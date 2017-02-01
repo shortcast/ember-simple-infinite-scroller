@@ -1,6 +1,5 @@
 import Component from 'ember-component';
 import layout from '../templates/components/infinite-scroller';
-import { guidFor } from 'ember-metal/utils';
 import { bind, debounce } from 'ember-runloop';
 import RSVP from 'rsvp';
 import inject from 'ember-service/inject';
@@ -15,7 +14,7 @@ export default Component.extend({
 
   init() {
     this._super(...arguments);
-    const guid = guidFor(this);
+    const guid = Em.guidFor(this);
     this.set('scrollEventName', `scroll.${guid}`);
   },
 
